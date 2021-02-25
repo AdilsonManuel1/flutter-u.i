@@ -53,7 +53,7 @@ class _ProgramadoresState extends State<Programadores> {
                     children: [
                        Row(
                         children: [
-                            FlatButton(onPressed: showAlertDialog(), 
+                            FlatButton(onPressed:null, 
                       child: const Text('Contactar'),
                       ),
                 
