@@ -1,4 +1,5 @@
 import 'package:desafio/body.dart';
+import 'package:desafio/programadores.dart';
 import 'package:flutter/material.dart';
 
 class perfil extends StatefulWidget {
@@ -42,7 +43,15 @@ class _perfilState extends State<perfil> {
                 ListTile(
                   title: Text("Ver Programadores"),
                   //subtitle: Text(""),
-                  leading: Icon(Icons.sms_rounded),
+                  leading: IconButton(icon: Icon(Icons.supervised_user_circle), 
+                  onPressed:(){
+                     Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Programadores(),
+                                  ),
+                                );
+                  },
+                  ),
                 ),
                 ListTile(
                   title: Text("Sair"),
