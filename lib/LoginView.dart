@@ -14,6 +14,7 @@ class LogaState extends State<Loga> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
+          
           child: Column(
             children: [
               SingleChildScrollView(

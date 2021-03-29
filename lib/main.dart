@@ -33,11 +33,14 @@ class Myapp extends StatelessWidget {
 
 import 'package:desafio/Login.dart';
 import 'package:desafio/LoginView.dart';
+import 'package:desafio/cadastro_view.dart';
 import 'package:desafio/index.dart';
 import 'package:desafio/perfil.dart';
 import 'package:desafio/programadores.dart';
 import 'package:desafio/widegetmain.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+
 
 
 void main() {
@@ -53,9 +56,18 @@ class AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     // home: Programadores(),
+      
+    // home: Programadores(),
     //home: perfil(),
-      home: Login(),
+      home: AnimatedSplashScreen(
+                    splash: Image.asset('images/login.jpg'),
+                    splashTransition: SplashTransition.rotationTransition,
+                    duration: 300,
+                    nextScreen: Login(),
+                  ),
+      
+
+      // Login(),
      debugShowCheckedModeBanner: false,
      // home:Widegetmain(),
       //debugShowMaterialGrid: false,

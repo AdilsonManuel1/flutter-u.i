@@ -1,24 +1,43 @@
 
 import 'dart:async';
+import 'package:desafio/body.dart';
+import 'package:desafio/mensagem.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:somedialog/somedialog.dart';
+
 
 
 
 class Programadores extends StatefulWidget {
   @override
+  
   _ProgramadoresState createState() => _ProgramadoresState();
 }
   
 class _ProgramadoresState extends State<Programadores> {
+    showSimpleAlert(){
+   Alert(
+     context: context,
+    title:'Deseja Contactar Adilson Manuel',
+    desc: 'Contactar Programador?',
+    image: Image.asset('images/adi.jpg'),
+   // buttons:Icon(Icons.style_sharp),
+    closeIcon: Icon(Icons.close)
+    ).show();
+  }
   @override
+ 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
         
         elevation: 0,
+        backgroundColor: Colors.black,
         centerTitle:true,
-        title: Text('Programadores'),
+     
+        title: Text('Programadores', style: TextStyle(color: Colors.yellow, fontSize: 20, fontWeight: FontWeight.bold),),
       ),
       body:SingleChildScrollView(
         child: Column(
@@ -27,8 +46,9 @@ class _ProgramadoresState extends State<Programadores> {
            // color: Colors.grey[300],
             child: Column(
               children: [
+                Container(height: 5,),
                 Text("Adilson Manuel - Flutter Mobile", 
-                style:TextStyle(color: Colors.grey, fontSize: 20,
+                style:TextStyle(color: Colors.black, fontSize: 20,
                 fontWeight: FontWeight.bold) ,),
                 Container(height: 10,),
                 Container(
@@ -48,12 +68,12 @@ class _ProgramadoresState extends State<Programadores> {
                 Padding(padding: EdgeInsets.only(left: 75),
                 child: Row(
                   children: [
-                      ButtonTheme.bar(
+                      ButtonTheme(
                   child: ButtonBar(
                     children: [
                        Row(
                         children: [
-                            FlatButton(onPressed:null, 
+                            FlatButton(onPressed:showSimpleAlert, 
                       child: const Text('Contactar'),
                       ),
                 
@@ -91,7 +111,7 @@ class _ProgramadoresState extends State<Programadores> {
             child: Column(
               children: [
                 Text("Desenvolvedora - Flutter Web", 
-                style:TextStyle(color: Colors.grey, fontSize: 20,
+                style:TextStyle( fontSize: 20,
                 fontWeight: FontWeight.bold) ,),
                 Container(height: 10,),
                 Container(
@@ -111,7 +131,7 @@ class _ProgramadoresState extends State<Programadores> {
                 Padding(padding: EdgeInsets.only(left: 75),
                 child: Row(
                   children: [
-                      ButtonTheme.bar(
+                      ButtonTheme(
                   child: ButtonBar(
                     children: [
                        Row(
@@ -145,7 +165,7 @@ class _ProgramadoresState extends State<Programadores> {
             child: Column(
               children: [
                 Text("Adilson Manuel - Flutter Dev", 
-                style:TextStyle(color: Colors.grey, fontSize: 20,
+                style:TextStyle( fontSize: 20,
                 fontWeight: FontWeight.bold) ,),
                 Container(height: 10,),
                 Container(
@@ -165,7 +185,7 @@ class _ProgramadoresState extends State<Programadores> {
                 Padding(padding: EdgeInsets.only(left: 75),
                 child: Row(
                   children: [
-                      ButtonTheme.bar(
+                      ButtonTheme(
                   child: ButtonBar(
                     children: [
                        Row(
@@ -199,7 +219,7 @@ class _ProgramadoresState extends State<Programadores> {
             child: Column(
               children: [
                 Text("Adilson Manuel - Flutter Dev", 
-                style:TextStyle(color: Colors.grey, fontSize: 20,
+                style:TextStyle(fontSize: 20,
                 fontWeight: FontWeight.bold) ,),
                 Container(height: 10,),
                 Container(
@@ -219,7 +239,7 @@ class _ProgramadoresState extends State<Programadores> {
                 Padding(padding: EdgeInsets.only(left: 75),
                 child: Row(
                   children: [
-                      ButtonTheme.bar(
+                      ButtonTheme(
                   child: ButtonBar(
                     children: [
                        Row(
@@ -236,10 +256,11 @@ class _ProgramadoresState extends State<Programadores> {
                         ],
                       )
                     ],
+                    
                   )
-                )
-
-                   
+                ),
+                
+                
                   ],
                 ),
                 )

@@ -1,6 +1,7 @@
 import 'package:desafio/body.dart';
 import 'package:desafio/programadores.dart';
 import 'package:flutter/material.dart';
+import 'package:desafio/Login.dart';
 
 class perfil extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _perfilState extends State<perfil> {
               children: [
                 UserAccountsDrawerHeader(
                   decoration: BoxDecoration(
-                    color: Colors.purple[300],
+                    color: Colors.black87,
                   ),
                 
                   currentAccountPicture: Container(
@@ -39,40 +40,52 @@ class _perfilState extends State<perfil> {
                   title: Text("Inicio"),
                   subtitle: Text("Aceder"),
                   leading: Icon(Icons.sms_rounded),
+                 
                 ),
                 ListTile(
+                   leading: Icon(Icons.supervised_user_circle), 
                   title: Text("Ver Programadores"),
+                   subtitle: Text("Programadores"),
                   //subtitle: Text(""),
-                  leading: IconButton(icon: Icon(Icons.supervised_user_circle), 
-                  onPressed:(){
-                     Navigator.of(context).push(
+                   onTap: (){
+                    Navigator.of(context).push(
                                   MaterialPageRoute(
                                     builder: (context) => Programadores(),
                                   ),
                                 );
                   },
+               
                   ),
-                ),
+                
                 ListTile(
+                     leading: Icon(Icons.close),
                   title: Text("Sair"),
                   subtitle: Text("Sair"),
-                  leading: Icon(Icons.sms_rounded),
+                  onTap:(){
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context)=>Login()),
+                    );
+                  }
                 ),
               ],
             ),
           ),
           appBar: AppBar(
+           
             centerTitle: true,
             title: Text('Perfil do Programador'),
-            backgroundColor: Colors.purple[300],
+            backgroundColor: Colors.black,
           ),
           body: SingleChildScrollView(
-              child: Column(
+              child: Container(
+                color: Colors.black,
+                height: MediaQuery.of(context).size.height,
+                child: Column(
             children: [
               SizedBox(height: 13,),
               Container(
-                height: 220.0,
-                width: 220.0,
+                height: 160.0,
+                width: 160.0,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
@@ -86,13 +99,6 @@ class _perfilState extends State<perfil> {
               SizedBox(
                 height: 20,
               ),
-              Text(
-                'Perfil',
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               SizedBox(
                 height: 10,
               ),
@@ -101,6 +107,7 @@ class _perfilState extends State<perfil> {
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
+                  color: Colors.white
                 ),
               ),
               SizedBox(
@@ -109,7 +116,7 @@ class _perfilState extends State<perfil> {
               Text(
                 "Programador Junior Flutter",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 20, color: Colors.black),
+                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -118,26 +125,98 @@ class _perfilState extends State<perfil> {
                       icon: Icon(
                         Icons.face,
                         size: 40,
-                        color: Colors.red[300],
+                        color: Colors.yellow,
                       ),
                       onPressed: null),
                   IconButton(
                       icon: Icon(
                         Icons.email_outlined,
                         size: 40,
-                        color: Colors.red[300],
+                        color: Colors.yellow,
                       ),
                       onPressed: null),
                   IconButton(
                       icon: Icon(
                         Icons.mark_email_read,
                         size: 40,
-                        color: Colors.red[300],
+                        color: Colors.yellow,
                       ),
                       onPressed: null),
+                      SizedBox(height: 10,
+                      ),
+                      
                 ],
               ),
+              Padding(
+                padding: const EdgeInsets.only(top:4.0, right: 12.0, left: 12.0),
+                child: RaisedButton(onPressed:(){},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.privacy_tip),
+                          Text('Private'),
+                        ],
+                      ),
+                      Icon(Icons.arrow_back_ios, textDirection: TextDirection.rtl,)
+                    ],
+                  ),
+                ),
+              ),
+               Padding(
+                padding: const EdgeInsets.only(top:4.0, right: 12.0, left: 12.0),
+                child: RaisedButton(onPressed:(){},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.computer),
+                          Text('Private'),
+                        ],
+                      ),
+                      Icon(Icons.arrow_back_ios, textDirection: TextDirection.rtl,)
+                    ],
+                  ),
+                ),
+              ),
+               Padding(
+                padding: const EdgeInsets.only(top:4.0, right: 12.0, left: 12.0),
+                child: RaisedButton(onPressed:(){},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.contact_mail,),
+                          Text('Private'),
+                        ],
+                      ),
+                      Icon(Icons.arrow_back_ios, textDirection: TextDirection.rtl,)
+                    ],
+                  ),
+                ),
+              ),
+               Padding(
+                padding: const EdgeInsets.only(top:4.0, right: 12.0, left: 12.0),
+                child: RaisedButton(onPressed:(){},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.privacy_tip),
+                          Text('Private'),
+                        ],
+                      ),
+                      Icon(Icons.arrow_back_ios, textDirection: TextDirection.rtl,)
+                    ],
+                  ),
+                ),
+              ),
             ],
+              ),
           )
           ),
     );
